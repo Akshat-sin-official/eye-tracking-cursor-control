@@ -1,48 +1,60 @@
-# Meyes - [Eyed cursor Controller] 👀
+<div align="center">
+  <h1>eye tracking cursor control (lately - Meyes)</h1>
+  
+</div>
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)]()
 
-![main](meyes.png)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-Enabled-green)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Mesh-red)
+![PyAutoGUI](https://img.shields.io/badge/PyAutoGUI-Cursor%20Control-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-Imagine controlling your computer with your eyes. This is what Meyes does. It is a simple python script that uses the dlib library to detect the eyes and move the cursor accordingly. It also uses the pyautogui library to click and double click. 
+## Overview
 
-## Installation ⚙️
+Meyes is a Python project for controlling the mouse with eye movement. It uses a webcam, facial landmark detection, and screen automation to move the cursor and trigger clicks.
 
+## System Architecture
+
+```mermaid
+flowchart LR
+    A[Webcam Input] --> B[Frame Capture]
+    B --> C[Face Landmark Detection]
+    C --> D[Eye Position Extraction]
+    D --> E[Cursor Mapping]
+    E --> F[Mouse Actions]
+    F --> G[Screen / Pointer]
+```
+
+## How It Works
+
+1. The webcam captures live frames.
+2. MediaPipe detects facial landmarks.
+3. Eye position is mapped to screen coordinates.
+4. PyAutoGUI moves the cursor and performs clicks.
+
+## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## Run
 
-```python
+```bash
 python main.py
 ```
 
-## Flow of Control 🚥
+## Notes
 
-- [x] OpenCV to capture the video from the webcam
-- [x] Google’s MediaPipe to detect the face and the eyes
-- [x] PyAutoGUI to move the cursor and click
+- Works best in good lighting.
+- Requires a working webcam.
+- Best suited for prototyping and assistive interaction experiments.
 
-## Constraints ⛔
+## Contributing
 
-- Decent camera quality
-- Proper lighting [can't function properly in low lighting]
+Contributions are welcome. Open an issue first for larger changes.
 
-## Contributing 🛠️
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-Help us overcome the constraints. ✌🏻
-
-**it took a whole lot effort to make this possible, would you mind giving us a star / sharing this?** 😄
-
-## Contributors 
-[![Twitter Follow](https://img.shields.io/twitter/follow/AkshatK99016584?style=social)](https://twitter.com/AkshatK99016584)
-* maybe you? 😏
-
-## Acknowledgements 📃
-* [OpenCV](https://opencv.org/)
-* [Dlib](http://dlib.net/)
-* [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
-* [Face Recognition](https://en.wikipedia.org/wiki/Facial_recognition_system)
+<div align="center">
+  <p>Thanks for checking out Meyes • Contributions welcome • Star the repo if you like it</p>
+</div>
