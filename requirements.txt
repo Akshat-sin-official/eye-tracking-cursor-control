@@ -1,3 +1,4 @@
 opencv-python
-mediapipe
+mediapipe==0.10.13
 pyautogui
+customtkinter
